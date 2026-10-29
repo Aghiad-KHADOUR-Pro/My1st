@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prénom Nom – CV et portfolio</title>
+<meta name="description" content="CV et portfolio de Prénom Nom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!--
+  Pour personnaliser : remplace tous les textes d'exemple (Prénom Nom, expériences, projets, liens).
+  Cherche les mots « À remplacer » ou « exemple » pour ne rien oublier.
+-->
+<style>
+  :root {
+    --bg: #f6f7fa;
+    --panel: #ffffff;
+    --ink: #1a2740;
+    --muted: #586478;
+    --line: #dde2ec;
+    --accent: #2c55e0;
+    --accent-ink: #ffffff;
+    --tag: #e6ebf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11182a;
+      --panel: #18213a;
+      --ink: #e8ecf6;
+      --muted: #9aa6bd;
+      --line: #2a3556;
+      --accent: #7f9cff;
+      --accent-ink: #11182a;
+      --tag: #243052;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 860px) {
+    .page { grid-template-columns: 300px 1fr; gap: 4rem; padding-top: 4rem; }
+    .side { position: sticky; top: 4rem; align-self: start; }
+  }
+
+  /* Colonne gauche */
+  .side h1 {
+    font-family: "Bricolage Grotesque", "Public Sans", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem;
+  }
+  .role { font-size: 1.1rem; margin: 0 0 1.25rem; color: var(--muted); }
+  .side nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; margin: 1.75rem 0; }
+  .side nav a { color: var(--ink); text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; }
+  .side nav a:hover { border-bottom-color: var(--accent); }
+  .contact { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.95rem; }
+  .btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  .btn:hover { filter: brightness(1.08); }
+
+  /* Contenu */
+  main section { margin-bottom: 3.25rem; scroll-margin-top: 2rem; }
+  h2 {
+    font-family: "Bricolage Grotesque", "Public Sans", sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--line);
+  }
+  .intro { font-size: 1.15rem; max-width: 62ch; margin: 0; }
+
+  .entry { display: grid; gap: 0.15rem 1.5rem; margin-bottom: 1.6rem; }
+  @media (min-width: 600px) { .entry { grid-template-columns: 9rem 1fr; } }
+  .when { color: var(--muted); font-size: 0.92rem; padding-top: 0.15rem; }
+  .entry h3 { margin: 0; font-size: 1.05rem; font-weight: 600; }
+  .entry p { margin: 0.25rem 0 0; color: var(--muted); max-width: 62ch; }
+
+  .projects { display: grid; gap: 1.1rem; }
+  @media (min-width: 600px) { .projects { grid-template-columns: 1fr 1fr; } }
+  .project {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--accent);
+    border-radius: 6px;
+    padding: 1.2rem 1.25rem;
+  }
+  .project h3 { margin: 0 0 0.35rem; font-size: 1.1rem; }
+  .project p { margin: 0 0 0.9rem; color: var(--muted); font-size: 0.97rem; }
+  .project a { font-weight: 600; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
+  .tags li { background: var(--tag); padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.93rem; font-weight: 500; }
+
+  footer { color: var(--muted); font-size: 0.9rem; }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  @media print {
+    body { background: #fff; color: #000; }
+    .side { position: static; }
+    .btn, .side nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="side">
+    <h1>Prénom Nom</h1>
+    <p class="role">Ton métier ou ce que tu recherches (À remplacer)</p>
+    <nav aria-label="Sections">
+      <a href="#parcours">Parcours</a>
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="contact">
+      <a href="mailto:ton.email@exemple.fr">ton.email@exemple.fr</a>
+      <a href="https://github.com/ton-pseudo">github.com/ton-pseudo</a>
+      <a href="https://www.linkedin.com/in/ton-profil">linkedin.com/in/ton-profil</a>
+    </div>
+    <a class="btn" href="cv.pdf">Télécharger mon CV</a>
+  </header>
+
+  <main>
+    <section id="presentation">
+      <h2>Présentation</h2>
+      <p class="intro">Je m'appelle Prénom, j'ai envie de travailler sur… Écris ici deux ou trois phrases simples : qui tu es, ce que tu sais faire et ce que tu cherches. (Texte d'exemple, À remplacer.)</p>
+    </section>
+
+    <section id="parcours">
+      <h2>Parcours</h2>
+      <div class="entry">
+        <div class="when">2024 – aujourd'hui</div>
+        <div>
+          <h3>Poste ou formation, Nom de l'entreprise ou de l'école</h3>
+          <p>Une ou deux phrases sur ce que tu y as fait ou appris. (Exemple)</p>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2022 – 2024</div>
+        <div>
+          <h3>Autre expérience, Nom de la structure</h3>
+          <p>Missions principales et résultats concrets si tu en as. (Exemple)</p>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2019 – 2022</div>
+        <div>
+          <h3>Diplôme ou formation, Nom de l'établissement</h3>
+          <p>Spécialité, mention ou projet marquant. (Exemple)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets">
+      <h2>Projets</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Nom du projet 1</h3>
+          <p>Ce que c'est, pour qui, et ce que tu y as fait. (Exemple)</p>
+          <a href="https://github.com/ton-pseudo/projet-1">Voir le projet</a>
+        </article>
+        <article class="project">
+          <h3>Nom du projet 2</h3>
+          <p>Une description courte et concrète. (Exemple)</p>
+          <a href="https://github.com/ton-pseudo/projet-2">Voir le projet</a>
+        </article>
+        <article class="project">
+          <h3>Nom du projet 3</h3>
+          <p>Ajoute ou supprime des blocs selon ton besoin. (Exemple)</p>
+          <a href="https://github.com/ton-pseudo/projet-3">Voir le projet</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="competences">
+      <h2>Compétences</h2>
+      <ul class="tags">
+        <li>Compétence 1</li>
+        <li>Compétence 2</li>
+        <li>Compétence 3</li>
+        <li>Outil ou logiciel</li>
+        <li>Langue : français</li>
+        <li>Langue : anglais</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Pour échanger sur un projet ou une opportunité, écris-moi à <a href="mailto:ton.email@exemple.fr">ton.email@exemple.fr</a>.</p>
+    </section>
+
+    <footer>© Prénom Nom</footer>
+  </main>
+
+</div>
+</body>
+</html>
